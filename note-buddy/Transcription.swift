@@ -62,10 +62,12 @@ class Transcription {
         for i in wordArray {
             if i == "a" || i == "of" || i == "the" || i == "is" || i == "and" || i == "or" || i == "but" || i == "to" || i == "in" || i == "an" || i == "it" || i == "its" {
                 continue
-            } else if wordCount[i] == nil {
-                wordCount[i] = 1
             } else {
-                wordCount[i] += 1
+                if wordCount[i] == nil {
+                    wordCount[i] = 1
+                } else {
+                    wordCount[i] += 1
+                }
             }
         }
         for _ in 0...5 {
