@@ -37,7 +37,7 @@ class Transcription {
     }
     
     func getResult() {
-        recognitionTask = speechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+        recognitionTask = SFSpeechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
             if let result = result {
                 finalString = result.bestTranscription.formattedString
             } else if let error = error {
@@ -48,14 +48,14 @@ class Transcription {
     
     func summarize() -> String {
         var summary = ""
-        var result = Reductio.summarize(finalString, compression: 0.8)
+        var result = Reductio.summarize(finalString, compression: 0.80)
         for i in result {
             summary += i
         }
         return summary
     }
     
-    func vocabWords(String: raw) -> [String] {
+    func vocabWords() -> [String] {
         var wordArray = finalString.components(separatedBy: " ")
         var wordCount: [String : Int]
         var commonWords: [String]
@@ -63,16 +63,16 @@ class Transcription {
             if i == "a" || i == "of" || i == "the" || i == "is" || i == "and" || i == "or" || i == "but" || i == "to" || i == "in" || i == "an" || i == "it" || i == "its" {
                 continue
             } else if dict[i] == nil {
-                dict[i] = 1
+                wordCount[i] = 1
             } else {
-                dict[i] += 1
+                wordCount[i] += 1
             }
         }
         for _ in 0...5 {
-            let maximum = dict.reduce(0.0) { max($0, $1.1) }
-            var temp = dict.allKeys(forValue: maximum)
+            let maximum = wordCount.reduce(0.0) { max($0, $1.1) }
+            var temp = wordCount.allKeys(forValue: maximum)
             commonWords.append(temp)
-            dict[temp] = 0
+            wordCount[temp] = 0
         }
         return commonWords
     }
