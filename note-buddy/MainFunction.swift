@@ -32,14 +32,14 @@ class MainFunction {
     func resetTimer() {
         if (time % 60 == 0 && running) {
             returnSummary += runMain.summarize()
-            for i in runMain.vocabWords {
+            for i in runMain.vocabWords() {
                 returnVocab.append(i)
             }
             runMain = Transcription()
             runMain.start()
         } else if (!running) {
             returnSummary += runMain.summarize()
-            for i in runMain.vocabWords {
+            for i in runMain.vocabWords() {
                 returnVocab.append(i)
             }
         }
