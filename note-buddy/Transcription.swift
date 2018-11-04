@@ -48,7 +48,7 @@ class Transcription {
     
     func summarize() -> String {
         var summary = ""
-        var result = Reductio.summarize(finalString, compression: 0.80)
+        var result = Reductio.summarize(finalString!, compression: 0.80)
         for i in result {
             summary += i
         }
