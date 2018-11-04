@@ -13,6 +13,7 @@
 		B5CB4C90218EB34700F97333 /* MainFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4C8F218EB34700F97333 /* MainFunction.swift */; };
 		E59B6A04218EC30A0008869C /* RecoderViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B6A03218EC30A0008869C /* RecoderViewContoller.swift */; };
 		E59B6A07218EC3E60008869C /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B6A06218EC3E60008869C /* TranscriptViewController.swift */; };
+		E59B6A09218ED4730008869C /* NotesViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B6A08218ED4730008869C /* NotesViewContoller.swift */; };
 		E5E30BB5218E515F0046ECFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E30BB4218E515F0046ECFA /* AppDelegate.swift */; };
 		E5E30BBA218E515F0046ECFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E30BB8218E515F0046ECFA /* Main.storyboard */; };
 		E5E30BBC218E51620046ECFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E30BBB218E51620046ECFA /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		D6E197A5740A12795AD061ED /* Pods_note_buddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_note_buddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59B6A03218EC30A0008869C /* RecoderViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoderViewContoller.swift; sourceTree = "<group>"; };
 		E59B6A06218EC3E60008869C /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
+		E59B6A08218ED4730008869C /* NotesViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewContoller.swift; sourceTree = "<group>"; };
 		E5E30BB1218E515F0046ECFA /* note-buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "note-buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E30BB4218E515F0046ECFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E30BB9218E515F0046ECFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				E59B6A03218EC30A0008869C /* RecoderViewContoller.swift */,
 				E59B6A06218EC3E60008869C /* TranscriptViewController.swift */,
+				E59B6A08218ED4730008869C /* NotesViewContoller.swift */,
 			);
 			path = ViewContollers;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E59B6A07218EC3E60008869C /* TranscriptViewController.swift in Sources */,
+				E59B6A09218ED4730008869C /* NotesViewContoller.swift in Sources */,
 				B5CB4C90218EB34700F97333 /* MainFunction.swift in Sources */,
 				E5E30BB5218E515F0046ECFA /* AppDelegate.swift in Sources */,
 				E59B6A04218EC30A0008869C /* RecoderViewContoller.swift in Sources */,

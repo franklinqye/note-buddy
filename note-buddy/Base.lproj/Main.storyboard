@@ -149,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="1948" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Notes View Contoller-->
         <scene sceneID="Jpb-fi-gEk">
             <objects>
-                <viewController id="m8f-0I-bEA" sceneMemberID="viewController">
+                <viewController id="m8f-0I-bEA" customClass="NotesViewContoller" customModule="note_buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j90-a2-WNA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
