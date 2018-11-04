@@ -65,7 +65,7 @@ class Transcription {
             } else if wordCount[i] == nil {
                 wordCount[i] = 1
             } else {
-                [i] += 1
+                wordCount[i] += 1
             }
         }
         for _ in 0...5 {
@@ -73,8 +73,8 @@ class Transcription {
             var temp = allKeys(val: maximum!, dict: wordCount)
             for j in temp {
                 commonWords.append(j)
+                wordCount[j] = 0
             }
-            wordCount[temp] = 0
         }
         return commonWords
     }
