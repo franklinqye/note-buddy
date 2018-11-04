@@ -9,7 +9,7 @@
 import Foundation
 
 
-class MainFunction {
+class MainFunction: Transcription {
     
     var timer = Timer()
     var time = 0
@@ -18,15 +18,14 @@ class MainFunction {
     var runMain = Transcription()
     var running = true //stop button
     
-    init() {}
+    override init() {}
     
-    func main() -> String {
+    func main() {
         runMain.start()
         while (running) {
             resetTimer()
         }
         resetTimer()
-        return returnSummary
     }
     
     func resetTimer() {

@@ -12,9 +12,9 @@ import Speech
 
 class Transcription {
     
-    var finalString: String?
+    var finalString = ""
     let audioEngine = AVAudioEngine()
-    let speechInstance: SFSpeechRecognizer? = SFSpeechRecognizer()
+    let speechInstance = SFSpeechRecognizer()
     let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     
@@ -30,6 +30,11 @@ class Transcription {
         } catch {
             return print("Error!")
         }
+        recognitionTask = speechInstance?.recognitionTask(with: request) { [unowned self] (result, _) in
+            if let result = result {
+                self.finalString = result.bestTranscription.formattedString
+            }
+        }
     }
     
     func stop() {
@@ -38,32 +43,24 @@ class Transcription {
         recognitionTask?.finish()
     }
     
-    func getResult() {
-        recognitionTask = speechInstance?.recognitionTask(with: request, resultHandler: { result, error in
-            if let result = result {
-                self.finalString = result.bestTranscription.formattedString
-            } else if let error = error {
-                print(error)
-            }
-        })
-    }
-    
     func summarize() -> String {
         var summaryLst = [[String]]()
         var summaryString = ""
-        Reductio.summarize(text: finalString!, compression: 0.80) {
-            phrases in summaryLst.append(phrases)
-        }
-        for i in 0...summaryLst.count {
-            for j in summaryLst[i] {
-                summaryString += j
+        if (finalString != "") {
+            Reductio.summarize(text: finalString, compression: 0.80) {
+                phrases in summaryLst.append(phrases)
+            }
+            for i in 0...summaryLst.count {
+                for j in summaryLst[i] {
+                    summaryString += j
+                }
             }
         }
         return summaryString
     }
     
     func vocabWords() -> [String] {
-        let wordArray = finalString!.components(separatedBy: " ")
+        let wordArray = finalString.components(separatedBy: " ")
         var wordCount = [String : Int]()
         var commonWords = [String]()
         for i in wordArray {
