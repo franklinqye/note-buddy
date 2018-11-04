@@ -12,14 +12,20 @@ import UIKit
 class TranscriptViewController: UIViewController {
     
     
+    @IBOutlet weak var rawText: UILabel!
+    var inputRawText: String?
+    var transcription: Transcription?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let safeText = inputRawText {
+            if (safeText.count > 100) {
+                rawText.text = String(safeText.prefix(100))
+            } else {
+                rawText.text = safeText
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    @IBAction func confirm(_ sender: Any) {
-        
     }
     
 }

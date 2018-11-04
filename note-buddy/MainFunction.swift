@@ -9,20 +9,20 @@
 import Foundation
 
 class MainFunction: Transcription {
-    
-    var timer = Timer()
-    var time = 0
-    var returnSummary = ""
-    
-    func main() -> String {
-        Transcription.start()
-        
-    }
-    
-    func resetTimer() {
-        if (time % 60 == 0) {
-            returnSummary += Transcription.getResult()
-            Transcription.start()
-        }
-    }
+//
+//    var timer = Timer()
+//    var time = 0
+//    var returnSummary = ""
+//
+//    func main() -> String {
+//        Transcription.start()
+//
+//    }
+//
+//    func resetTimer() {
+//        if (time % 60 == 0) {
+//            returnSummary += Transcription.getResult()
+//            Transcription.start()
+//        }
+//    }
 }

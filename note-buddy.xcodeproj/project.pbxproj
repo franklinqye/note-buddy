@@ -11,8 +11,9 @@
 		7DF12F2256E91A4B35842DD5 /* Pods_note_buddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E197A5740A12795AD061ED /* Pods_note_buddyUITests.framework */; };
 		A2BB98E6E4F425112438BF1D /* Pods_note_buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17AE48CECA4D4038307DF08 /* Pods_note_buddy.framework */; };
 		B5CB4C90218EB34700F97333 /* MainFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB4C8F218EB34700F97333 /* MainFunction.swift */; };
+		E59B6A04218EC30A0008869C /* RecoderViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B6A03218EC30A0008869C /* RecoderViewContoller.swift */; };
+		E59B6A07218EC3E60008869C /* TranscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59B6A06218EC3E60008869C /* TranscriptViewController.swift */; };
 		E5E30BB5218E515F0046ECFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E30BB4218E515F0046ECFA /* AppDelegate.swift */; };
-		E5E30BB7218E515F0046ECFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E30BB6218E515F0046ECFA /* ViewController.swift */; };
 		E5E30BBA218E515F0046ECFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E30BB8218E515F0046ECFA /* Main.storyboard */; };
 		E5E30BBC218E51620046ECFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E30BBB218E51620046ECFA /* Assets.xcassets */; };
 		E5E30BBF218E51620046ECFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E30BBD218E51620046ECFA /* LaunchScreen.storyboard */; };
@@ -49,9 +50,10 @@
 		D05EFACFE91BA295578F25BA /* Pods-note-buddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note-buddyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-note-buddyUITests/Pods-note-buddyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D36E7D08882E32ABF162DE32 /* Pods-note-buddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note-buddyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-note-buddyTests/Pods-note-buddyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6E197A5740A12795AD061ED /* Pods_note_buddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_note_buddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E59B6A03218EC30A0008869C /* RecoderViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoderViewContoller.swift; sourceTree = "<group>"; };
+		E59B6A06218EC3E60008869C /* TranscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptViewController.swift; sourceTree = "<group>"; };
 		E5E30BB1218E515F0046ECFA /* note-buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "note-buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E30BB4218E515F0046ECFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5E30BB6218E515F0046ECFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5E30BB9218E515F0046ECFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5E30BBB218E51620046ECFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E30BBE218E51620046ECFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E59B6A05218EC3800008869C /* ViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				E59B6A03218EC30A0008869C /* RecoderViewContoller.swift */,
+				E59B6A06218EC3E60008869C /* TranscriptViewController.swift */,
+			);
+			path = ViewContollers;
+			sourceTree = "<group>";
+		};
 		E5E30BA8218E515F0046ECFA = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +152,8 @@
 		E5E30BB3218E515F0046ECFA /* note-buddy */ = {
 			isa = PBXGroup;
 			children = (
+				E59B6A05218EC3800008869C /* ViewContollers */,
 				E5E30BB4218E515F0046ECFA /* AppDelegate.swift */,
-				E5E30BB6218E515F0046ECFA /* ViewController.swift */,
 				E5E30BB8218E515F0046ECFA /* Main.storyboard */,
 				264AC379218E8DF200A07C28 /* Transcription.swift */,
 				B5CB4C8F218EB34700F97333 /* MainFunction.swift */,
@@ -346,10 +357,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-note-buddy/Pods-note-buddy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Reductio/Reductio.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reductio.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -381,9 +394,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59B6A07218EC3E60008869C /* TranscriptViewController.swift in Sources */,
 				B5CB4C90218EB34700F97333 /* MainFunction.swift in Sources */,
-				E5E30BB7218E515F0046ECFA /* ViewController.swift in Sources */,
 				E5E30BB5218E515F0046ECFA /* AppDelegate.swift in Sources */,
+				E59B6A04218EC30A0008869C /* RecoderViewContoller.swift in Sources */,
 				264AC37A218E8DF200A07C28 /* Transcription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

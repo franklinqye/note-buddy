@@ -2,22 +2,30 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Reductio (1.4.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Reductio (from `https://github.com/fdzsergio/Reductio.git`)
 
 EXTERNAL SOURCES:
   ChameleonFramework:
     :git: https://github.com/ViccAlexander/Chameleon.git
+  Reductio:
+    :git: https://github.com/fdzsergio/Reductio.git
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
     :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
+  Reductio:
+    :commit: cc74017a4df53b1fdb1f1f700f7a77c36312d33e
+    :git: https://github.com/fdzsergio/Reductio.git
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Reductio: bb6fe437dc1025f766d1c39161029efad2220cc9
 
-PODFILE CHECKSUM: 3e861c956c5d1987983f9d5685ef84d17e82af28
+PODFILE CHECKSUM: bf5fc50c0c224dc6b4e274ff015b9e6ef3f31e2f
 
 COCOAPODS: 1.5.3
