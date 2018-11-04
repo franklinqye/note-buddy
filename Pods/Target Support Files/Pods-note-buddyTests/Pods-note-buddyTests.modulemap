@@ -1,0 +1,6 @@
+framework module Pods_note_buddyTests {
+  umbrella header "Pods-note-buddyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

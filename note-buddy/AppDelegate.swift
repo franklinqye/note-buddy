@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Chameleon.setGlobalThemeUsingPrimaryColor(FlatMint(), withSecondaryColor: FlatWhite(), usingFontName: UIFont(name: "HelveticaNeue", size: 16)!.fontName
+            , andContentStyle: UIContentStyle.contrast)
         return true
     }
 
@@ -43,4 +46,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
