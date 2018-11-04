@@ -56,7 +56,7 @@ class Transcription {
     }
     
     func vocabWords() -> [String] {
-        var wordArray = finalString.components(separatedBy: " ")
+        var wordArray = finalString!.components(separatedBy: " ")
         var wordCount: [String : Int]
         var commonWords: [String]
         for i in wordArray {
@@ -79,7 +79,7 @@ class Transcription {
         return commonWords
     }
     
-    func allKeys(val: Int, dict: Dictionary) -> [String] {
+    func allKeys(val: Int, dict: Dictionary<String, Int>) -> [String] {
         return dict.filter { $1 == val }.map { $0.0 }
     }
 }
