@@ -47,21 +47,23 @@ class Transcription {
     }
     
     func summarize() -> String {
-        var summaryLst = [String]
+        var summaryLst = [[String]]()
         var summaryString = ""
         Reductio.summarize(text: finalString!, compression: 0.80) {
-            phrases in summary += phrases
+            phrases in summaryLst.append(phrases)
         }
-        for i in summaryLst {
-            summaryString += i
+        for i in 0...summaryLst.count {
+            for j in summaryLst[i] {
+                summaryString += j
+            }
         }
         return summaryString
     }
     
     func vocabWords() -> [String] {
         let wordArray = finalString!.components(separatedBy: " ")
-        var wordCount: [String : Int]
-        var commonWords: [String]
+        var wordCount = [String : Int]()
+        var commonWords = [String]()
         for i in wordArray {
             if i == "a" || i == "of" || i == "the" || i == "is" || i == "and" || i == "or" || i == "but" || i == "to" || i == "in" || i == "an" || i == "it" || i == "its" {
                 continue
