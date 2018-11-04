@@ -47,11 +47,15 @@ class Transcription {
     }
     
     func summarize() -> String {
-        var summary = ""
+        var summaryLst = [String]
+        var summaryString = ""
         Reductio.summarize(text: finalString!, compression: 0.80) {
-            phrases in print(phrases)
+            phrases in summary += phrases
         }
-        return summary
+        for i in summaryLst {
+            summaryString += i
+        }
+        return summaryString
     }
     
     func vocabWords() -> [String] {
