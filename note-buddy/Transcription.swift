@@ -54,7 +54,7 @@ class Transcription {
         return summary
     }
     
-    func vocabWords(String: raw) -> String {
+    func vocabWords(String: raw) -> [String] {
         var wordArray = finalString.components(separatedBy: " ")
         var wordCount: [String : Int]
         var commonWords: [String]
