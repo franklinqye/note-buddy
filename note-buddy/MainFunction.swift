@@ -8,21 +8,39 @@
 
 import Foundation
 
-class MainFunction: Transcription {
+class MainFunction {
     
     var timer = Timer()
     var time = 0
     var returnSummary = ""
+    var returnVocab = [String]()
+    var main = Transcription()
+    var running = true //stop button
+    
+    init() {}
     
     func main() -> String {
-        Transcription.start()
-        
+        main.start()
+        while (running) {
+            resetTimer()
+        }
+        resetTimer()
+        return returnSummary
     }
     
     func resetTimer() {
-        if (time % 60 == 0) {
-            returnSummary += Transcription.getResult()
-            Transcription.start()
+        if (time % 60 == 0 && running) {
+            returnSummary += main.summarize()
+            for i in main.vocabWords {
+                returnVocab.append(i)
+            }
+            main = Transcription()
+            main.start()
+        } else if (!running) {
+            returnSummary += main.summarize()
+            for i in main.vocabWords {
+                returnVocab.append(i)
+            }
         }
     }
 }
