@@ -11,6 +11,7 @@ import UIKit
 
 class TranscriptViewController: UIViewController {
     
+
     
     @IBOutlet weak var rawText: UILabel!
     var inputRawText: String?
@@ -28,4 +29,20 @@ class TranscriptViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func confirmText(_ sender: Any) {
+        performSegue(withIdentifier: "transcriptVocab", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let id = segue.identifier else { return }
+        print("hi")
+        if id == "transcriptVocab" {
+            guard let dest = segue.destination as? NotesViewContoller else { return }
+            print("sleep")
+//            dest.inputNotes = transcription!.summarize()
+            dest.inputNotes = "hi"
+//            dest.viewDidLoad()
+            print("done")
+        }
+    }
 }

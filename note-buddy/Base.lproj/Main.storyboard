@@ -34,9 +34,13 @@
                                     <constraint firstAttribute="height" constant="225" id="aKv-fd-HPL"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53L-IP-JbK">
-                                <rect key="frame" x="170" y="540" width="35" height="29"/>
-                                <state key="normal" title="Start"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="53L-IP-JbK">
+                                <rect key="frame" x="170" y="522.5" width="35" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="n1R-GI-0k8"/>
+                                    <constraint firstAttribute="width" constant="64" id="nAw-dQ-5Hk"/>
+                                </constraints>
+                                <state key="normal" image="play"/>
                                 <connections>
                                     <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHQ-JT-HWW"/>
                                 </connections>
@@ -45,7 +49,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Z8D-j7-Hfa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="20Z-Kt-Xj3"/>
-                            <constraint firstItem="53L-IP-JbK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="476" id="Ngh-hB-mcj"/>
                             <constraint firstItem="53L-IP-JbK" firstAttribute="centerY" secondItem="Z8D-j7-Hfa" secondAttribute="centerY" id="e9v-TQ-Tzh"/>
                             <constraint firstItem="53L-IP-JbK" firstAttribute="centerX" secondItem="Z8D-j7-Hfa" secondAttribute="centerX" id="fiS-Wy-lTA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z8D-j7-Hfa" secondAttribute="bottom" id="pzM-Dg-zYQ"/>
@@ -56,6 +59,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pHD-FU-X2q"/>
                     <connections>
+                        <outlet property="playButton" destination="53L-IP-JbK" id="RQg-aH-duR"/>
                         <outlet property="timeElapsed" destination="IVY-jg-I9t" id="CzM-pG-ZKa"/>
                         <outlet property="timeElasped" destination="IVY-jg-I9t" id="Ose-so-ot0"/>
                         <segue destination="3Xp-9X-nqJ" kind="show" identifier="viewTranscript" id="7Of-w9-aEl"/>
@@ -79,6 +83,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8Z-MH-NbG">
                                         <rect key="frame" x="259" y="22" width="82" height="30"/>
                                         <state key="normal" title="Looks Good"/>
+                                        <connections>
+                                            <action selector="confirmText:" destination="3Xp-9X-nqJ" eventType="touchUpInside" id="kZ9-08-piV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -104,8 +111,8 @@
                                     <constraint firstAttribute="height" constant="74" id="1El-cY-DsF"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCU-DX-AA5">
-                                <rect key="frame" x="0.0" y="138" width="375" height="455"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCU-DX-AA5">
+                                <rect key="frame" x="-104" y="138" width="375" height="455"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yem-KT-cqH">
                                         <rect key="frame" x="20" y="20" width="335" height="21"/>
@@ -140,7 +147,7 @@
                     </view>
                     <connections>
                         <outlet property="rawText" destination="Yem-KT-cqH" id="Jd3-3g-OCt"/>
-                        <segue destination="m8f-0I-bEA" kind="show" id="3U8-z3-s6Q"/>
+                        <segue destination="m8f-0I-bEA" kind="show" identifier="transcriptVocab" id="3U8-z3-s6Q"/>
                         <segue destination="RR0-tA-o41" kind="unwind" identifier="unwindToRecorder" unwindAction="unwindToRecorderWithSegue:" id="nks-8t-LZg"/>
                     </connections>
                 </viewController>
@@ -181,11 +188,17 @@
                                         <rect key="frame" x="51" y="22" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Restart"/>
+                                        <connections>
+                                            <action selector="restart" destination="m8f-0I-bEA" eventType="touchUpInside" id="58k-HD-1L4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4q-aH-TSZ">
                                         <rect key="frame" x="260" y="22" width="34" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="save" destination="m8f-0I-bEA" eventType="touchUpInside" id="aEv-94-zdY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -227,8 +240,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zjQ-sB-EiP"/>
                     </view>
+                    <connections>
+                        <outlet property="notes" destination="e6E-yI-zdA" id="M9F-XW-DNd"/>
+                        <outlet property="restartButton" destination="2Gd-ty-7Ae" id="8DS-Ho-lFq"/>
+                        <segue destination="fq5-qp-SnC" kind="unwind" identifier="backToStart" unwindAction="unwindToRecorderWithSegue:" id="L9n-eW-ht0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aat-zC-a3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fq5-qp-SnC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2784.8000000000002" y="132.68365817091455"/>
         </scene>
@@ -251,4 +270,7 @@
             <point key="canvasLocation" x="180" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play" width="64" height="64"/>
+    </resources>
 </document>

@@ -25,13 +25,26 @@ class RecoderViewContoller: UIViewController {
     var recording: Bool?
     
     override func viewDidLoad() {
-        timeElapsed.text = "00:00"
+        print("test")
+        //timeElapsed.text = "00:00"
         super.viewDidLoad()
-        recording = false
-        timer = Timer()
+        //recording = false
+        //timer = Timer()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("appeared")
+        playButton.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
+        transcription = Transcription()
+        time = 0
+        timeElapsed.text = "00:00"
+        recording = false
+        super.viewWillAppear(animated)
+    }
+    
+    
+    @IBOutlet weak var playButton: UIButton!
     
     @IBAction func record(_ sender: Any) {
         guard let safeRecording = recording else { return }
@@ -43,7 +56,8 @@ class RecoderViewContoller: UIViewController {
             performSegue(withIdentifier: "viewTranscript", sender: nil)
         } else {
             recording = true
-            Timer.scheduledTimer(timeInterval: 1,
+            playButton.setImage(UIImage(named: "rec.png"), for: UIControl.State.normal)
+            timer = Timer.scheduledTimer(timeInterval: 1,
                                  target: self, selector: #selector(updateTimeElapsed), userInfo: nil, repeats: true)
             print("A")
             transcription.start()
@@ -53,9 +67,15 @@ class RecoderViewContoller: UIViewController {
     
     @objc func updateTimeElapsed() {
         time += 1
-        let seconds = String(time % 60)
-        let minutes = String(time / 60)
-        timeElapsed.text = "\(seconds):\(minutes)"
+        var seconds = String(time % 60)
+        if (time % 60 < 10) {
+            seconds = "0" + seconds
+        }
+        var minutes = String(time / 60)
+        if (time % 60 < 10) {
+            minutes = "0" + minutes
+        }
+        timeElapsed.text = "\(minutes):\(seconds)"
     }
     
     
@@ -64,9 +84,10 @@ class RecoderViewContoller: UIViewController {
         guard let id = segue.identifier else { return }
         if id == "viewTranscript" {
             guard let dest = segue.destination as? TranscriptViewController else { return }
+            self.timer.invalidate()
             dest.transcription = transcription
             dest.inputRawText = transcription.finalString
-            dest.viewDidLoad()
+//            dest.viewDidLoad()
         }
     }
     
