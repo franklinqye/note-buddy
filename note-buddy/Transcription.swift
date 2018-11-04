@@ -8,6 +8,7 @@
 
 import Foundation
 import Reductio
+import Speech
 
 class Transcription {
     
