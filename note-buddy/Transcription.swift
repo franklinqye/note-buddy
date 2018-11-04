@@ -18,6 +18,8 @@ class Transcription {
     let request = SFSpeechAudioBufferRecognitionRequest()
     var recognitionTask: SFSpeechRecognitionTask?
     
+    init() {}
+    
     func start() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
