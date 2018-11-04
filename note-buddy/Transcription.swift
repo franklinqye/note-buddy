@@ -69,7 +69,7 @@ class Transcription {
         }
         for _ in 0...5 {
             let maximum = dict.reduce(0.0) { max($0, $1.1) }
-            var temp = allKeys(maximum)
+            var temp = dict.allKeys(forValue: maximum)
             commonWords.append(temp)
             dict[temp] = 0
         }
