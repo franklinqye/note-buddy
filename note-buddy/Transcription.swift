@@ -56,23 +56,21 @@ class Transcription {
     }
     
     func vocabWords() -> [String] {
-        var wordArray = finalString!.components(separatedBy: " ")
+        let wordArray = finalString!.components(separatedBy: " ")
         var wordCount: [String : Int]
         var commonWords: [String]
         for i in wordArray {
             if i == "a" || i == "of" || i == "the" || i == "is" || i == "and" || i == "or" || i == "but" || i == "to" || i == "in" || i == "an" || i == "it" || i == "its" {
                 continue
+            } else if wordCount[i] == nil {
+                wordCount[i] = 1
             } else {
-                if wordCount[i] == nil {
-                    wordCount[i] = 1
-                } else {
-                    wordCount[i] += 1
-                }
+                wordCount[i] = wordCount[i]! + 1
             }
         }
         for _ in 0...5 {
             let maximum = wordCount.values.max()
-            var temp = allKeys(val: maximum!, dict: wordCount)
+            let temp = allKeys(val: maximum!, dict: wordCount)
             for j in temp {
                 commonWords.append(j)
                 wordCount[j] = 0
