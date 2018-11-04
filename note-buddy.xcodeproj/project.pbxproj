@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264AC37A218E8DF200A07C28 /* Transcription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264AC379218E8DF200A07C28 /* Transcription.swift */; };
 		7DF12F2256E91A4B35842DD5 /* Pods_note_buddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6E197A5740A12795AD061ED /* Pods_note_buddyUITests.framework */; };
 		A2BB98E6E4F425112438BF1D /* Pods_note_buddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17AE48CECA4D4038307DF08 /* Pods_note_buddy.framework */; };
 		E5E30BB5218E515F0046ECFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E30BB4218E515F0046ECFA /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		264AC379218E8DF200A07C28 /* Transcription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcription.swift; sourceTree = "<group>"; };
 		47D7B918FA10EA50902E8EDD /* Pods-note-buddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note-buddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-note-buddy/Pods-note-buddy.release.xcconfig"; sourceTree = "<group>"; };
 		60F06DD34867AB375526C075 /* Pods-note-buddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note-buddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-note-buddy/Pods-note-buddy.debug.xcconfig"; sourceTree = "<group>"; };
 		63B38738AE7E4D94CE7648DE /* Pods-note-buddyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note-buddyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-note-buddyUITests/Pods-note-buddyUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				E5E30BB4218E515F0046ECFA /* AppDelegate.swift */,
 				E5E30BB6218E515F0046ECFA /* ViewController.swift */,
 				E5E30BB8218E515F0046ECFA /* Main.storyboard */,
+				264AC379218E8DF200A07C28 /* Transcription.swift */,
 				E5E30BBB218E51620046ECFA /* Assets.xcassets */,
 				E5E30BBD218E51620046ECFA /* LaunchScreen.storyboard */,
 				E5E30BC0218E51620046ECFA /* Info.plist */,
@@ -301,15 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-note-buddyUITests-checkManifestLockResult.txt",
 			);
@@ -323,15 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-note-buddy-checkManifestLockResult.txt",
 			);
@@ -345,15 +340,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-note-buddy/Pods-note-buddy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 			);
@@ -367,15 +358,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-note-buddyTests-checkManifestLockResult.txt",
 			);
@@ -393,6 +380,7 @@
 			files = (
 				E5E30BB7218E515F0046ECFA /* ViewController.swift in Sources */,
 				E5E30BB5218E515F0046ECFA /* AppDelegate.swift in Sources */,
+				264AC37A218E8DF200A07C28 /* Transcription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

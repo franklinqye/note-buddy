@@ -7,6 +7,7 @@ target 'note-buddy' do
 
   # Pods for note-buddy
     pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+    pod 'Reductio', :git => 'https://github.com/fdzsergio/Reductio.git'
 
 
   target 'note-buddyTests' do
