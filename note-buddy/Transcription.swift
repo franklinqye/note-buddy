@@ -12,7 +12,7 @@ import Speech
 
 class Transcription {
     
-    var finalString: String?
+    var finalString: String
     let audioEngine = AVAudioEngine()
     let speechInstance: SFSpeechRecognizer? = SFSpeechRecognizer()
     let request = SFSpeechAudioBufferRecognitionRequest()
@@ -37,7 +37,7 @@ class Transcription {
     }
     
     func getResult() {
-        recognitionTask = SFSpeechRecognizer?.recognitionTask(with: request, resultHandler: { result, error in
+        recognitionTask = speechInstance?.recognitionTask(with: request, resultHandler: { result, error in
             if let result = result {
                 finalString = result.bestTranscription.formattedString
             } else if let error = error {
@@ -69,15 +69,17 @@ class Transcription {
             }
         }
         for _ in 0...5 {
-            let maximum = wordCount.reduce(0.0) { max($0, $1.1) }
+            let maximum = wordCount.values.max()
             var temp = wordCount.allKeys(forValue: maximum)
-            commonWords.append(temp)
+            for j in temp {
+                commonWords.append(j)
+            }
             wordCount[temp] = 0
         }
         return commonWords
     }
     
-    func allKeys(forValue val: Value) -> [Key] {
+    func allKeys(forValue Int: val) -> [String] {
         return self.filter { $1 == val }.map { $0.0 }
     }
 }
