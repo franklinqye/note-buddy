@@ -14,13 +14,13 @@ class MainFunction {
     var time = 0
     var returnSummary = ""
     var returnVocab = [String]()
-    var main = Transcription()
+    var runMain = Transcription()
     var running = true //stop button
     
     init() {}
     
     func main() -> String {
-        main.start()
+        runMain.start()
         while (running) {
             resetTimer()
         }
@@ -30,15 +30,15 @@ class MainFunction {
     
     func resetTimer() {
         if (time % 60 == 0 && running) {
-            returnSummary += main.summarize()
-            for i in main.vocabWords {
+            returnSummary += runMain.summarize()
+            for i in runMain.vocabWords {
                 returnVocab.append(i)
             }
-            main = Transcription()
-            main.start()
+            runMain = Transcription()
+            runMain.start()
         } else if (!running) {
-            returnSummary += main.summarize()
-            for i in main.vocabWords {
+            returnSummary += runMain.summarize()
+            for i in runMain.vocabWords {
                 returnVocab.append(i)
             }
         }
