@@ -1,4 +1,4 @@
-# note-buddy
+# NoteBuddy
 
 <span>&nbsp; &nbsp; &nbsp;</span><img src="note-buddy/Assets.xcassets/AppIcon.appiconset/logo.png"/>
 
